@@ -1,4 +1,14 @@
 
+using Mapster;
+using MapsterMapper;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+using TicketsBooking.Application;
+using TicketsBooking.Application.Interfaces;
+using TicketsBooking.Application.Services;
+using TicketsBooking.Domain.Entities;
+using TicketsBooking.Infrastructure.Repositories;
 namespace TicketsBooking
 {
     public class Program
@@ -7,16 +17,18 @@ namespace TicketsBooking
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+            builder.Services.AddDbContext<ApplicationDbContext>(Options => Options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
+            
+            builder.Services.AddScoped<IEventRepositorie, EventRepositorie>();
+            builder.Services.AddScoped<IEventService, EventService>();
+            
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
@@ -26,7 +38,6 @@ namespace TicketsBooking
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 

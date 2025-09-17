@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "TicketsBooking.Controllers.EventController",
+    "Method": "Events",
+    "RelativePath": "api/Event",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TicketsBooking.Controllers.EventController",
+    "Method": "Create",
+    "RelativePath": "api/Event",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "TicketsBooking.Application.DTOs.CreateEventRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
