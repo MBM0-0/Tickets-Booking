@@ -3,13 +3,13 @@
     public class Event
     {
     public int Id { get; set; }
-    public string Name { get; set; }
+    public required string Name { get; set; }
     public string? Description { get; set; }
-    public string Location { get; set; }
+    public required string Location { get; set; }
     public int capacity { get; set; }
     public DateOnly Date { get; set; }
     public TimeOnly Time { get; set; }
 
-    // Join Coming Soon
+    public ICollection<Booking> Bookings { get; set; }
     }
 }

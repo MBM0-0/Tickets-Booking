@@ -26,6 +26,8 @@ namespace TicketsBooking
             
             builder.Services.AddScoped<IEventRepositorie, EventRepositorie>();
             builder.Services.AddScoped<IEventService, EventService>();
+            builder.Services.AddScoped<IUserRepositorie, UserRepositorie>();
+            builder.Services.AddScoped<IUserService, UserService>();
             
             var app = builder.Build();
 

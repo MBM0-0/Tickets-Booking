@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TicketsBooking.Application.DTOs;
+using TicketsBooking.Application.DTOs.Event;
 using TicketsBooking.Application.Interfaces;
 using TicketsBooking.Application.Services;
 

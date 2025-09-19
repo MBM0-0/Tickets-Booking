@@ -1,7 +1,8 @@
-﻿namespace TicketsBooking.Application.DTOs
+﻿namespace TicketsBooking.Application.DTOs.Event
 {
-    public class CreateEventRequest
+    public class EventResponse
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string? Description { get; set; }
         public string Location { get; set; }

@@ -1,7 +1,7 @@
 ﻿
 using Mapster;
 using MapsterMapper;
-using TicketsBooking.Application.DTOs;
+using TicketsBooking.Application.DTOs.Event;
 using TicketsBooking.Application.Interfaces;
 using TicketsBooking.Domain.Entities;
 using TicketsBooking.Infrastructure.Repositories;

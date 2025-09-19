@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TicketsBooking;
@@ -11,9 +12,11 @@ using TicketsBooking;
 namespace TicketsBooking.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250919100031_UserTable")]
+    partial class UserTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,38 +24,6 @@ namespace TicketsBooking.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
-
-            modelBuilder.Entity("TicketsBooking.Domain.Entities.Booking", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
-
-                    b.Property<DateTime>("BookingDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<int>("EventId")
-                        .HasColumnType("integer");
-
-                    b.Property<bool>("IsCancelld")
-                        .HasColumnType("boolean");
-
-                    b.Property<int>("SeatBooked")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("EventId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Bookings");
-                });
 
             modelBuilder.Entity("TicketsBooking.Domain.Entities.Event", b =>
                 {
@@ -114,35 +85,6 @@ namespace TicketsBooking.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("TicketsBooking.Domain.Entities.Booking", b =>
-                {
-                    b.HasOne("TicketsBooking.Domain.Entities.Event", "Event")
-                        .WithMany("Bookings")
-                        .HasForeignKey("EventId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("TicketsBooking.Domain.Entities.User", "User")
-                        .WithMany("Bookings")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Event");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("TicketsBooking.Domain.Entities.Event", b =>
-                {
-                    b.Navigation("Bookings");
-                });
-
-            modelBuilder.Entity("TicketsBooking.Domain.Entities.User", b =>
-                {
-                    b.Navigation("Bookings");
                 });
 #pragma warning restore 612, 618
         }

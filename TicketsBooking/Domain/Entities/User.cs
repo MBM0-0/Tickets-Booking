@@ -1,0 +1,13 @@
+﻿namespace TicketsBooking.Domain.Entities
+{
+    public class User
+    {
+        public int Id { get; set; }
+        public required string FullName { get; set; }
+        public required string username { get; set; }
+        public required string Email { get; set; }
+        public required string Password { get; set; }
+
+        public ICollection<Booking> Bookings { get; set; }
+    }
+}
