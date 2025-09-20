@@ -25,10 +25,18 @@ namespace TicketsBooking.Infrastructure.Repositories
         {
             await _context.Users.AddAsync(entity);
         }
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(User entity)
         {
-            var entity = _context.Users.Find(id);
             _context.Users.Remove(entity);
+        }
+        public async Task<User?> GetByUsernameAsync(string username)
+        {
+            return await _context.Users.FirstOrDefaultAsync(u => u.username == username);
+        }
+
+        public async Task<User?> GetByEmailAsync(string email)
+        {
+            return await _context.Users.FirstOrDefaultAsync(u => u.Email.ToLower() == email.ToLower());
         }
         public async Task SaveChangesAsync()
         {

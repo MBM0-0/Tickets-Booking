@@ -31,7 +31,10 @@ namespace TicketsBooking
             builder.Services.AddScoped<IBookingRepositorie, BookingRepositorie>();
             builder.Services.AddScoped<IBookingService, BookingService>();
             
+
             var app = builder.Build();
+
+            app.UseMiddleware<TicketsBooking.Application.Middleware.ExceptionMiddleware>();
 
             if (app.Environment.IsDevelopment())
             {

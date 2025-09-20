@@ -3,9 +3,7 @@
     public class UpdateBookingRequest
     {
         public int id { get; set; }
-        public int EventId { get; set; }
-        public int UserId { get; set; }
-        public int SeatBooked { get; set; } // per user
+        public int SeatBooked { get; set; } 
         public DateTime BookingDate { get; set; }
         public bool IsCancelld { get; set; }
     }

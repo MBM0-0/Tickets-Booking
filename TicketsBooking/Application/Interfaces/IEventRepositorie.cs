@@ -8,7 +8,7 @@ namespace TicketsBooking.Application.Interfaces
         public Task<List<Event>> GetAllAsync();
         public Task<Event> GetByIdAsync(int id);
         public Task AddAsync(Event CreateEventRequest);
-        public Task DeleteAsync(int id);
+        public Task DeleteAsync(Event entity);
         public Task SaveChangesAsync();
     }
 }

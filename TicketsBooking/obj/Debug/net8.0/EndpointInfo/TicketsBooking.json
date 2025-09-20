@@ -368,13 +368,9 @@
             "type": "integer",
             "format": "int32"
           },
-          "date": {
+          "dateTime": {
             "type": "string",
-            "format": "date"
-          },
-          "time": {
-            "type": "string",
-            "format": "time"
+            "format": "date-time"
           }
         },
         "additionalProperties": false
@@ -405,14 +401,6 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "eventId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "userId": {
             "type": "integer",
             "format": "int32"
           },
@@ -453,13 +441,9 @@
             "type": "integer",
             "format": "int32"
           },
-          "date": {
+          "dateTime": {
             "type": "string",
-            "format": "date"
-          },
-          "time": {
-            "type": "string",
-            "format": "time"
+            "format": "date-time"
           }
         },
         "additionalProperties": false

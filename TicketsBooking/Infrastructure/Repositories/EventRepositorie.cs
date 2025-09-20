@@ -17,7 +17,7 @@ namespace TicketsBooking.Infrastructure.Repositories
 
     public async Task<List<Event>> GetAllAsync()
         {
-            return await _context.Events.OrderBy(d => d.Date).ThenBy(t=>t.Time).ToListAsync();
+            return await _context.Events.OrderBy(d => d.DateTime).ToListAsync();
         }
     public async Task<Event> GetByIdAsync( int id )
         {
@@ -27,9 +27,8 @@ namespace TicketsBooking.Infrastructure.Repositories
         {
             await _context.Events.AddAsync(entity);
         }
-        public async Task DeleteAsync (int id)
+        public async Task DeleteAsync (Event entity)
     {
-            var entity =  _context.Events.Find(id);
             _context.Events.Remove(entity);
 
     }
