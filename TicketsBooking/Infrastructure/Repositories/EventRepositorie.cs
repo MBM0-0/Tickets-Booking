@@ -18,7 +18,7 @@ namespace TicketsBooking.Infrastructure.Repositories
     public async Task<List<Event>> GetAllAsync()
         {
             return await _context.Events.OrderBy(d => d.DateTime).ToListAsync();
-        }
+        }  
     public async Task<Event> GetByIdAsync( int id )
         {
             return await _context.Events.FindAsync(id);

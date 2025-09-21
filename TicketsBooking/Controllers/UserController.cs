@@ -17,32 +17,32 @@ namespace TicketsBooking.Controllers
 
 
         [HttpGet]
-     public async Task<IActionResult> Users ()
+     public async Task<IActionResult> GetAllUsers()
         {
             var Users = await _userService.GetAllUserAsync();
             return Ok(Users);
         }
         [HttpGet]
         [Route("{id}")]
-        public async Task<IActionResult> User (int id)
+        public async Task<IActionResult> GetUserByIdUser(int id)
         {
-            var user = await _userService.GetByUserId(id);
+            var user = await _userService.GetByUserIdAsync(id);
             return Ok(user);
         }
         [HttpPost]
-        public async Task<IActionResult> Add (CreateUserRequest dto)
+        public async Task<IActionResult> CreateUser (CreateUserRequest dto)
         {
             var entity = await _userService.AddUserAsync(dto);
             return Ok(entity);
         }
         [HttpPut]
-        public async Task<IActionResult> Update (UpdateUserRequest dto)
+        public async Task<IActionResult> UpdateUser (UpdateUserRequest dto)
         {
             var entity = await _userService.UpdateUserAsync(dto);
             return Ok(entity);
         }
         [HttpDelete]
-        public async Task<IActionResult> Delete (int id)
+        public async Task<IActionResult> DeleteUser(int id)
         {
             await _userService.DeleteUserAsync(id);
             return Ok();

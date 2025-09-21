@@ -21,6 +21,10 @@ namespace TicketsBooking.Infrastructure.Repositories
         {
             return await _dbcontext.Bookings.Include(b => b.User).Include(b => b.Event).FirstOrDefaultAsync(b => b.id == id);
         }
+        public async Task<bool> BookingExistsAsync(int eventId, int userId)
+        {
+            return await _dbcontext.Bookings.AnyAsync(b => b.EventId == eventId && b.UserId == userId);
+        }
         public async Task AddAsync(Booking entity)
         {
             await _dbcontext.Bookings.AddAsync(entity);
@@ -29,6 +33,12 @@ namespace TicketsBooking.Infrastructure.Repositories
         {
             var entity = await _dbcontext.Bookings.FindAsync(id);
             _dbcontext.Bookings.Remove(entity);
+        }
+        public async Task<int> GetBookedSeatsAsync(int id)
+        {
+            var count = await _dbcontext.Bookings.Where(x => x.EventId == id).Where(x => x.IsCancelld == false).SumAsync(x => x.SeatBooked);
+
+            return count;
         }
         public async Task SaveChangesAsync()
         {

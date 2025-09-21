@@ -1,12 +1,9 @@
 ﻿
 using Mapster;
-using MapsterMapper;
 using TicketsBooking.Application.DTOs.Event;
 using TicketsBooking.Application.Exceptions;
 using TicketsBooking.Application.Interfaces;
 using TicketsBooking.Domain.Entities;
-using TicketsBooking.Infrastructure.Repositories;
-using TicketsBooking.Migrations;
 
 namespace TicketsBooking.Application.Services
 {
@@ -22,7 +19,7 @@ namespace TicketsBooking.Application.Services
         {
             var events = await _eventRepositorie.GetAllAsync();
             if (events == null || !events.Any())
-                throw new NotFoundException("There is No Events to Show");
+                throw new NotFoundException("There is No Events to Show.");
 
             return events.Adapt<List<EventResponse>>();
         }
@@ -31,7 +28,7 @@ namespace TicketsBooking.Application.Services
         {
             var entity = await _eventRepositorie.GetByIdAsync(id);
             if (entity == null)
-                throw new NotFoundException("There is No Event Found With This Id");
+                throw new NotFoundException("There is No Event Found With This Id.");
             return entity.Adapt<EventResponse>();
         }
 
@@ -39,9 +36,9 @@ namespace TicketsBooking.Application.Services
         {
             var entity = dto.Adapt<Event>();
             if (entity.capacity <= 0)
-                throw new ValidationException("You Can't Have an Event With No Seat Capacity");
+                throw new ValidationException("You Can't Have an Event With No Seat Capacity.");
             if (entity.DateTime <= DateTime.UtcNow)
-                throw new ValidationException("You Can't Create Events in the Past");
+                throw new ValidationException("You Can't Create Events in the Past.");
 
             await _eventRepositorie.AddAsync(entity);
             await _eventRepositorie.SaveChangesAsync();
@@ -52,12 +49,13 @@ namespace TicketsBooking.Application.Services
         {
             var entity = await _eventRepositorie.GetByIdAsync(dto.Id);
             if (entity == null)
-                throw new NotFoundException("There is No Event Found With This Id");
+                throw new NotFoundException("There is No Event Found With This Id.");
             if (dto.capacity <= 0)
-                throw new ValidationException("You Can't Have an Event With No Seat Capacity");
+                throw new ValidationException("You Can't Have an Event With No Seat Capacity.");
             if (dto.DateTime <= DateTime.UtcNow)
-                throw new ValidationException("You Can't Create Events in the Past");
-
+                throw new ValidationException("You Can't Create Events in the Past.");
+            if (entity.capacity > dto.capacity)
+                throw new ValidationException("You can't decrease the number of seats in your event.");
 
             dto.Adapt(entity);
             await _eventRepositorie.SaveChangesAsync();
@@ -68,7 +66,7 @@ namespace TicketsBooking.Application.Services
         {
             var entity = await _eventRepositorie.GetByIdAsync(id);
             if (entity == null)
-                throw new NotFoundException("There is No Event Found With This Id");
+                throw new NotFoundException("There is No Event Found With This Id.");
 
             await _eventRepositorie.DeleteAsync(entity);
             await _eventRepositorie.SaveChangesAsync();

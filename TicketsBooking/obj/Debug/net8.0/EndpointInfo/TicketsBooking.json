@@ -98,6 +98,29 @@
         }
       }
     },
+    "/api/Booking/FreeSeats/{id}": {
+      "get": {
+        "tags": [
+          "Booking"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Event": {
       "get": {
         "tags": [
@@ -407,10 +430,6 @@
           "seatBooked": {
             "type": "integer",
             "format": "int32"
-          },
-          "bookingDate": {
-            "type": "string",
-            "format": "date-time"
           },
           "isCancelld": {
             "type": "boolean"

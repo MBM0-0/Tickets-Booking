@@ -15,34 +15,33 @@ namespace TicketsBooking.Controllers
             _eventService = eventService;
         }
         [HttpGet]
-        //[Route]
-        public async Task<IActionResult> Events ()
+        public async Task<IActionResult> GetAllEvents()
         {
             var events = await _eventService.GetAllEventsAsync();
             return Ok(events);
         }
         [HttpGet("{id}")]
-        public async Task<IActionResult> EventById (int id)
+        public async Task<IActionResult> GetEventById(int id)
         {
             var events = await _eventService.GetEventByIdAsync(id);
             return Ok(events);
 
         }
         [HttpPost]
-        public async Task<IActionResult> Create (CreateEventRequest dto)
+        public async Task<IActionResult> CreateEvent(CreateEventRequest dto)
         {
             var events = await _eventService.CreateEventAsync(dto);
             return Ok(events);
         }
         [HttpPut]
-        public async Task<IActionResult> Update(UpdateEventRequest dto)
+        public async Task<IActionResult> UpdateEvent(UpdateEventRequest dto)
         {
             var events = await _eventService.UpdateEventAsync(dto);
             return Ok(events);
         }
 
         [HttpDelete]
-        public async Task<IActionResult> Delete (int id)
+        public async Task<IActionResult> DeleteEvent(int id)
         {
             await _eventService.DeleteEventAsync(id);
             return Ok();

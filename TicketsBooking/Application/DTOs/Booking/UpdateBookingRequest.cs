@@ -4,7 +4,6 @@
     {
         public int id { get; set; }
         public int SeatBooked { get; set; } 
-        public DateTime BookingDate { get; set; }
         public bool IsCancelld { get; set; }
     }
 }

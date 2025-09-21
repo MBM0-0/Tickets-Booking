@@ -1,4 +1,5 @@
-﻿using TicketsBooking.Domain.Entities;
+﻿using TicketsBooking.Application.DTOs.Booking;
+using TicketsBooking.Domain.Entities;
 
 namespace TicketsBooking.Application.Interfaces
 {
@@ -6,8 +7,10 @@ namespace TicketsBooking.Application.Interfaces
     {
         public Task<List<Booking>> GetAllAsync();
         public Task<Booking> GetByIdAsync(int id);
+        public Task<bool> BookingExistsAsync(int eventId, int userId);
         public Task AddAsync(Booking entity);
         public Task DeleteAsync(int id);
+        public Task<int> GetBookedSeatsAsync(int id);
         public Task SaveChangesAsync();
     }
 }
