@@ -5,12 +5,13 @@ namespace TicketsBooking.Application.DTOs.Booking
 {
     public class BookingResponse
     {
-        public int id { get; set; }
-        public int EventId { get; set; }
+        public int Id { get; set; }
         public EventResponse Event { get; set; }
         public UserResponse User { get; set; }
         public int SeatBooked { get; set; }
-        public DateTime BookingDate { get; set; } = DateTime.Now;
-        public bool IsCancelld { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
+        public DateTime? CancelledAt { get; set; }
+        public bool IsCancelled { get; set; }
     }
 }

@@ -2,8 +2,8 @@
 {
     public class UpdateBookingRequest
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public int SeatBooked { get; set; } 
-        public bool IsCancelld { get; set; }
+        public bool IsCancelled { get; set; }
     }
 }

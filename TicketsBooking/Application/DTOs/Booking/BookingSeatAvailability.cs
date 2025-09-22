@@ -2,8 +2,8 @@
 {
     public class BookingSeatAvailability
     {
-        public int seatCapacity { get; set; }
-        public int seatsBooked { get; set; }
-        public int seatsAvailable { get; set; }
+        public int SeatCapacity { get; set; }
+        public int SeatsBooked { get; set; }
+        public int SeatsAvailable { get; set; }
     }
 }

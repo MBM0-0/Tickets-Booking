@@ -15,11 +15,11 @@ namespace TicketsBooking.Infrastructure.Repositories
         }
         public async Task<List<Booking>> GetAllAsync()
         {
-            return await _dbcontext.Bookings.Include(e => e.Event).Include(u => u.User).OrderByDescending(o => o.IsCancelld).ToListAsync();
+            return await _dbcontext.Bookings.Include(e => e.Event).Include(u => u.User).Where(o => o.IsCancelled == false).ToListAsync();
         }
         public async Task<Booking> GetByIdAsync(int id)
         {
-            return await _dbcontext.Bookings.Include(b => b.User).Include(b => b.Event).FirstOrDefaultAsync(b => b.id == id);
+            return await _dbcontext.Bookings.Include(b => b.User).Include(b => b.Event).FirstOrDefaultAsync(b => b.Id == id);
         }
         public async Task<bool> BookingExistsAsync(int eventId, int userId)
         {
@@ -29,14 +29,9 @@ namespace TicketsBooking.Infrastructure.Repositories
         {
             await _dbcontext.Bookings.AddAsync(entity);
         }
-        public async Task DeleteAsync(int id)
-        {
-            var entity = await _dbcontext.Bookings.FindAsync(id);
-            _dbcontext.Bookings.Remove(entity);
-        }
         public async Task<int> GetBookedSeatsAsync(int id)
         {
-            var count = await _dbcontext.Bookings.Where(x => x.EventId == id).Where(x => x.IsCancelld == false).SumAsync(x => x.SeatBooked);
+            var count = await _dbcontext.Bookings.Where(x => x.EventId == id).Where(x => x.IsCancelled == false).SumAsync(x => x.SeatBooked);
 
             return count;
         }

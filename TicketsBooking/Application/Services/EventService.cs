@@ -35,9 +35,9 @@ namespace TicketsBooking.Application.Services
         public async Task<EventResponse> CreateEventAsync(CreateEventRequest dto)
         {
             var entity = dto.Adapt<Event>();
-            if (entity.capacity <= 0)
+            if (entity.Capacity <= 0)
                 throw new ValidationException("You Can't Have an Event With No Seat Capacity.");
-            if (entity.DateTime <= DateTime.UtcNow)
+            if (entity.StartsAt <= DateTime.UtcNow)
                 throw new ValidationException("You Can't Create Events in the Past.");
 
             await _eventRepositorie.AddAsync(entity);
@@ -50,11 +50,11 @@ namespace TicketsBooking.Application.Services
             var entity = await _eventRepositorie.GetByIdAsync(dto.Id);
             if (entity == null)
                 throw new NotFoundException("There is No Event Found With This Id.");
-            if (dto.capacity <= 0)
+            if (dto.Capacity <= 0)
                 throw new ValidationException("You Can't Have an Event With No Seat Capacity.");
-            if (dto.DateTime <= DateTime.UtcNow)
+            if (dto.StartsAt <= DateTime.UtcNow)
                 throw new ValidationException("You Can't Create Events in the Past.");
-            if (entity.capacity > dto.capacity)
+            if (entity.Capacity > dto.Capacity)
                 throw new ValidationException("You can't decrease the number of seats in your event.");
 
             dto.Adapt(entity);

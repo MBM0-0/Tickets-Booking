@@ -5,6 +5,5 @@
         public int EventId { get; set; }
         public int UserId { get; set; }
         public int SeatBooked { get; set; } 
-        public DateTime BookingDate { get; set; } = DateTime.Now;
     }
 }

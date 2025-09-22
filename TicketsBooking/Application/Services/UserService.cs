@@ -40,7 +40,7 @@ namespace TicketsBooking.Application.Services
             var emailexisit = await _userRepositorie.GetByEmailAsync(entity.Email);
             if (emailexisit != null)
                 throw new ValidationException("The Email You Entered is Used Try Another One.");
-            var userexisit = await _userRepositorie.GetByUsernameAsync(entity.username);
+            var userexisit = await _userRepositorie.GetByUsernameAsync(entity.Username);
             if (userexisit != null)
                 throw new ValidationException("The username You Entered is Used Try Another One.");
 

@@ -22,6 +22,7 @@ namespace TicketsBooking.Controllers
             var Users = await _userService.GetAllUserAsync();
             return Ok(Users);
         }
+
         [HttpGet]
         [Route("{id}")]
         public async Task<IActionResult> GetUserByIdUser(int id)
@@ -29,23 +30,26 @@ namespace TicketsBooking.Controllers
             var user = await _userService.GetByUserIdAsync(id);
             return Ok(user);
         }
+
         [HttpPost]
         public async Task<IActionResult> CreateUser (CreateUserRequest dto)
         {
             var entity = await _userService.AddUserAsync(dto);
-            return Ok(entity);
+            return Created("",entity);
         }
+
         [HttpPut]
         public async Task<IActionResult> UpdateUser (UpdateUserRequest dto)
         {
             var entity = await _userService.UpdateUserAsync(dto);
             return Ok(entity);
         }
-        [HttpDelete]
+
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {
             await _userService.DeleteUserAsync(id);
-            return Ok();
+            return NoContent();
         }
 
     }

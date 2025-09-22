@@ -14,12 +14,14 @@ namespace TicketsBooking.Controllers
         {
             _eventService = eventService;
         }
+
         [HttpGet]
         public async Task<IActionResult> GetAllEvents()
         {
             var events = await _eventService.GetAllEventsAsync();
             return Ok(events);
         }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetEventById(int id)
         {
@@ -27,12 +29,14 @@ namespace TicketsBooking.Controllers
             return Ok(events);
 
         }
+
         [HttpPost]
         public async Task<IActionResult> CreateEvent(CreateEventRequest dto)
         {
             var events = await _eventService.CreateEventAsync(dto);
-            return Ok(events);
+            return Created("", events);
         }
+
         [HttpPut]
         public async Task<IActionResult> UpdateEvent(UpdateEventRequest dto)
         {
@@ -40,11 +44,11 @@ namespace TicketsBooking.Controllers
             return Ok(events);
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEvent(int id)
         {
             await _eventService.DeleteEventAsync(id);
-            return Ok();
+            return NoContent();
         }
     }
 }

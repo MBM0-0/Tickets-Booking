@@ -39,14 +39,14 @@ namespace TicketsBooking.Application.Services
             var eventEntity = await _eventRepositorie.GetByIdAsync(id);
             if (eventEntity == null)
                 throw new NotFoundException("There is No Event Found Whith This Id.");
-            var capacity = eventEntity.capacity;
+            var capacity = eventEntity.Capacity;
             var bookedSeats = await _bookingRepositorie.GetBookedSeatsAsync(id);
             var freeSeats = capacity - bookedSeats;
            var result = new BookingSeatAvailability
             {
-                seatCapacity = capacity,
-                seatsBooked = bookedSeats,
-                seatsAvailable = freeSeats
+                SeatCapacity = capacity,
+                SeatsBooked = bookedSeats,
+                SeatsAvailable = freeSeats
             };
             return result;
         }
@@ -66,13 +66,14 @@ namespace TicketsBooking.Application.Services
             var entity = dto.Adapt<Booking>();
             if (entity.SeatBooked <= 0 || entity.SeatBooked > 4)
                 throw new ValidationException("You Have To Book Seats and it Can't Be More Than 4.");
-            if (CheckEventId.DateTime <= DateTime.UtcNow)
+            if (CheckEventId.StartsAt <= DateTime.UtcNow)
                 throw new ValidationException("You can't book an event that has already started or ended.");
 
             var bookedSeats = await GetSeatAvailabilityAsync(dto.EventId);
-            if (bookedSeats.seatsAvailable < dto.SeatBooked)
-                throw new ValidationException($"Event Have {bookedSeats.seatsAvailable} Seats Availabil.");
+            if (bookedSeats.SeatsAvailable < dto.SeatBooked)
+                throw new ValidationException($"Event Have {bookedSeats.SeatsAvailable} Seats Availabil.");
 
+            entity.CreatedAt = DateTime.UtcNow;
             await _bookingRepositorie.AddAsync(entity);
             await _bookingRepositorie.SaveChangesAsync();
             var response = entity.Adapt<CreateBookingRequest>();
@@ -81,19 +82,32 @@ namespace TicketsBooking.Application.Services
 
         public async Task<UpdateBookingRequest> UpdateBookingAsync(UpdateBookingRequest dto)
         {
-            var entity = await _bookingRepositorie.GetByIdAsync(dto.id);
+            var entity = await _bookingRepositorie.GetByIdAsync(dto.Id);
             if (entity == null)
                 throw new NotFoundException("There is No Booking Found Whith This Id.");
             if (dto.SeatBooked <= 0 || dto.SeatBooked > 4)
                 throw new ValidationException("You Have To Book Seats and it Can't Be More Than 4.");
             // if event is done or started you cant update it
             var bookedSeats = await GetSeatAvailabilityAsync(entity.EventId);
-            if ((bookedSeats.seatsAvailable + entity.SeatBooked) < dto.SeatBooked)
-                throw new ValidationException($"Event Have {bookedSeats.seatsAvailable} Seats Availabil.");
+            if ((bookedSeats.SeatsAvailable + entity.SeatBooked) < dto.SeatBooked)
+                throw new ValidationException($"Event Have {bookedSeats.SeatsAvailable} Seats Availabil.");
 
+            entity.UpdatedAt = DateTime.UtcNow;
             dto.Adapt(entity);
             await _bookingRepositorie.SaveChangesAsync();
             return dto;
+        }
+
+        public async Task CancelBookingAsync(int id)
+        {
+           var entity = await _bookingRepositorie.GetByIdAsync(id);
+            if (entity == null)
+                throw new NotFoundException("There is No Booking Found Whith This Id.");
+            if (entity.IsCancelled == true)
+                throw new ValidationException("Booking is already Cancelle.");
+            entity.CancelledAt = DateTime.UtcNow;
+            entity.IsCancelled = true;
+            await _bookingRepositorie.SaveChangesAsync();
         }
     }
 }

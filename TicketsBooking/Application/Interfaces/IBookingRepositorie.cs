@@ -9,7 +9,6 @@ namespace TicketsBooking.Application.Interfaces
         public Task<Booking> GetByIdAsync(int id);
         public Task<bool> BookingExistsAsync(int eventId, int userId);
         public Task AddAsync(Booking entity);
-        public Task DeleteAsync(int id);
         public Task<int> GetBookedSeatsAsync(int id);
         public Task SaveChangesAsync();
     }

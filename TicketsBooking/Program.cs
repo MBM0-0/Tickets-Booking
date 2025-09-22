@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using TicketsBooking.Application;
+using TicketsBooking.Application.BackgroundJobs;
 using TicketsBooking.Application.Interfaces;
 using TicketsBooking.Application.Services;
 using TicketsBooking.Domain.Entities;
@@ -30,7 +31,8 @@ namespace TicketsBooking
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IBookingRepositorie, BookingRepositorie>();
             builder.Services.AddScoped<IBookingService, BookingService>();
-            
+
+            builder.Services.AddHostedService<EventExpirationService>();
 
             var app = builder.Build();
 

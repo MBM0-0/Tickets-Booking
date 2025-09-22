@@ -21,13 +21,15 @@ namespace TicketsBooking.Controllers
             var result = await _bookingService.GetAllBookingAsync();
             return Ok(result);
         }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetBookingById(int id)
         {
             var result = await _bookingService.GetBookingByIdAsync(id);
             return Ok(result);
         }
-        [HttpGet("FreeSeats/{id}")]
+
+        [HttpGet("SeatAvailability/{id}")]
         public async Task<IActionResult> GetSeatAvailability(int id)
         {
             var result = await _bookingService.GetSeatAvailabilityAsync(id);
@@ -38,13 +40,21 @@ namespace TicketsBooking.Controllers
         public async Task<IActionResult> CreateBooking(CreateBookingRequest dto)
         {
             var result = await _bookingService.AddBookingAsync(dto);
-            return Ok(result);
+            return Created("",result);
         }
+
         [HttpPut]
         public async Task<IActionResult> UpdateBooking(UpdateBookingRequest dto)
         {
         var result = await _bookingService.UpdateBookingAsync(dto);
         return Ok(result);
+        }
+
+        [HttpPatch("Cancel")]
+        public async Task<ActionResult> CancelBooking (int id)
+        {
+           await _bookingService.CancelBookingAsync(id);
+            return Ok($"The Booking With The Id: {id} Has Been Cancelled");
         }
     }
 }

@@ -98,7 +98,7 @@
         }
       }
     },
-    "/api/Booking/FreeSeats/{id}": {
+    "/api/Booking/SeatAvailability/{id}": {
       "get": {
         "tags": [
           "Booking"
@@ -108,6 +108,28 @@
             "name": "id",
             "in": "path",
             "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Booking/Cancel": {
+      "patch": {
+        "tags": [
+          "Booking"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -189,15 +211,18 @@
             "description": "OK"
           }
         }
-      },
-      "delete": {
+      }
+    },
+    "/api/Event/{id}": {
+      "get": {
         "tags": [
           "Event"
         ],
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -209,10 +234,8 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/Event/{id}": {
-      "get": {
+      },
+      "delete": {
         "tags": [
           "Event"
         ],
@@ -302,15 +325,18 @@
             "description": "OK"
           }
         }
-      },
-      "delete": {
+      }
+    },
+    "/api/User/{id}": {
+      "get": {
         "tags": [
           "User"
         ],
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -322,10 +348,8 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/User/{id}": {
-      "get": {
+      },
+      "delete": {
         "tags": [
           "User"
         ],
@@ -364,10 +388,6 @@
           "seatBooked": {
             "type": "integer",
             "format": "int32"
-          },
-          "bookingDate": {
-            "type": "string",
-            "format": "date-time"
           }
         },
         "additionalProperties": false
@@ -391,7 +411,11 @@
             "type": "integer",
             "format": "int32"
           },
-          "dateTime": {
+          "startsAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endsAt": {
             "type": "string",
             "format": "date-time"
           }
@@ -431,7 +455,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "isCancelld": {
+          "isCancelled": {
             "type": "boolean"
           }
         },
@@ -460,9 +484,16 @@
             "type": "integer",
             "format": "int32"
           },
-          "dateTime": {
+          "startsAt": {
             "type": "string",
             "format": "date-time"
+          },
+          "endsAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isEnded": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false

@@ -59,8 +59,24 @@
   },
   {
     "ContainingType": "TicketsBooking.Controllers.BookingController",
+    "Method": "CancelBooking",
+    "RelativePath": "api/Booking/Cancel",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TicketsBooking.Controllers.BookingController",
     "Method": "GetSeatAvailability",
-    "RelativePath": "api/Booking/FreeSeats/{id}",
+    "RelativePath": "api/Booking/SeatAvailability/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -117,25 +133,25 @@
   },
   {
     "ContainingType": "TicketsBooking.Controllers.EventController",
-    "Method": "DeleteEvent",
-    "RelativePath": "api/Event",
-    "HttpMethod": "DELETE",
+    "Method": "GetEventById",
+    "RelativePath": "api/Event/{id}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "TicketsBooking.Controllers.EventController",
-    "Method": "GetEventById",
+    "Method": "DeleteEvent",
     "RelativePath": "api/Event/{id}",
-    "HttpMethod": "GET",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -191,25 +207,25 @@
   },
   {
     "ContainingType": "TicketsBooking.Controllers.UserController",
-    "Method": "DeleteUser",
-    "RelativePath": "api/User",
-    "HttpMethod": "DELETE",
+    "Method": "GetUserByIdUser",
+    "RelativePath": "api/User/{id}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "TicketsBooking.Controllers.UserController",
-    "Method": "GetUserByIdUser",
+    "Method": "DeleteUser",
     "RelativePath": "api/User/{id}",
-    "HttpMethod": "GET",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [

@@ -17,7 +17,7 @@ namespace TicketsBooking.Infrastructure.Repositories
 
     public async Task<List<Event>> GetAllAsync()
         {
-            return await _context.Events.OrderBy(d => d.DateTime).ToListAsync();
+            return await _context.Events.Where(X => X.IsEnded == false).OrderBy(d => d.StartsAt).ToListAsync();
         }  
     public async Task<Event> GetByIdAsync( int id )
         {
@@ -32,6 +32,10 @@ namespace TicketsBooking.Infrastructure.Repositories
             _context.Events.Remove(entity);
 
     }
+        public async Task<List<Event>> CancelAsync()
+        {
+          return await _context.Events.Where(x => !x.IsEnded && x.StartsAt < DateTime.UtcNow).ToListAsync();
+        }
         public async Task SaveChangesAsync()
         {
             await _context.SaveChangesAsync();
