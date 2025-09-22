@@ -33,6 +33,8 @@ namespace TicketsBooking.Application.Services
     public async Task<UserResponse> AddUserAsync(CreateUserRequest dto)
         {
             var entity = dto.Adapt<User>();
+            if (entity.Username.Length < 5)
+                throw new ValidationException("Username Shoud Be at Lese 5 Charcters long");
             if ( entity.Password.Length is < 8 || !(entity.Password.Any(char.IsDigit)) || !(entity.Password.Any(char.IsUpper)) || !(entity.Password.Any(char.IsLower)))
             throw new ValidationException("Password must be more than 8 characters and contain a number, uppercase and lowercase letters.");
             if (!entity.Email.Contains('@') || !(entity.Email.EndsWith(".com")))

@@ -491,9 +491,6 @@
           "endsAt": {
             "type": "string",
             "format": "date-time"
-          },
-          "isEnded": {
-            "type": "boolean"
           }
         },
         "additionalProperties": false

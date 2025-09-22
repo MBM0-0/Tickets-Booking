@@ -36,6 +36,10 @@ namespace TicketsBooking.Infrastructure.Repositories
         {
           return await _context.Events.Where(x => !x.IsEnded && x.StartsAt < DateTime.UtcNow).ToListAsync();
         }
+        public async Task<bool> GetDuplicateDataAsync(string name)
+        {
+           return await _context.Events.Where(x => !x.IsEnded).AnyAsync(x => x.Name == name);
+        }
         public async Task SaveChangesAsync()
         {
             await _context.SaveChangesAsync();

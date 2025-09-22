@@ -9,6 +9,5 @@
         public int Capacity { get; set; }
         public DateTime StartsAt { get; set; }
         public DateTime EndsAt { get; set; }
-        public bool IsEnded { get; set; }
     }
 }

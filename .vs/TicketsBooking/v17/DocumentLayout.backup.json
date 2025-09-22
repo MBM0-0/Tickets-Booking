@@ -3,56 +3,40 @@
   "WorkspaceRootPath": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|d:\\proj\\junior engineer task\\ticketsbooking\\ticketsbooking\\domain\\entities\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|solutionrelative:ticketsbooking\\domain\\entities\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|d:\\proj\\junior engineer task\\ticketsbooking\\ticketsbooking\\application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|solutionrelative:ticketsbooking\\application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|d:\\proj\\junior engineer task\\ticketsbooking\\ticketsbooking\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|solutionrelative:ticketsbooking\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|d:\\proj\\junior engineer task\\ticketsbooking\\ticketsbooking\\infrastructure\\repositories\\eventrepositorie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|solutionrelative:ticketsbooking\\infrastructure\\repositories\\eventrepositorie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|d:\\proj\\junior engineer task\\ticketsbooking\\ticketsbooking\\application\\interfaces\\ibookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|solutionrelative:ticketsbooking\\application\\interfaces\\ibookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|d:\\proj\\junior engineer task\\ticketsbooking\\ticketsbooking\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|solutionrelative:ticketsbooking\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|d:\\proj\\junior engineer task\\ticketsbooking\\ticketsbooking\\application\\backgroundjobs\\eventexpirationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|solutionrelative:ticketsbooking\\application\\backgroundjobs\\eventexpirationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|d:\\proj\\junior engineer task\\ticketsbooking\\ticketsbooking\\application\\interfaces\\ieventrepositorie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|solutionrelative:ticketsbooking\\application\\interfaces\\ieventrepositorie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|d:\\proj\\junior engineer task\\ticketsbooking\\ticketsbooking\\infrastructure\\repositories\\bookingrepositorie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|solutionrelative:ticketsbooking\\infrastructure\\repositories\\bookingrepositorie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|d:\\proj\\junior engineer task\\ticketsbooking\\ticketsbooking\\application\\services\\eventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|solutionrelative:ticketsbooking\\application\\services\\eventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|d:\\proj\\junior engineer task\\ticketsbooking\\ticketsbooking\\application\\services\\bookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|solutionrelative:ticketsbooking\\application\\services\\bookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|d:\\proj\\junior engineer task\\ticketsbooking\\ticketsbooking\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|solutionrelative:ticketsbooking\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|d:\\proj\\junior engineer task\\ticketsbooking\\ticketsbooking\\application\\interfaces\\ibookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|solutionrelative:ticketsbooking\\application\\interfaces\\ibookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|d:\\proj\\junior engineer task\\ticketsbooking\\ticketsbooking\\application\\dtos\\booking\\createbookingrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|solutionrelative:ticketsbooking\\application\\dtos\\booking\\createbookingrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|d:\\proj\\junior engineer task\\ticketsbooking\\ticketsbooking\\domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|solutionrelative:ticketsbooking\\domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|d:\\proj\\junior engineer task\\ticketsbooking\\ticketsbooking\\application\\dtos\\event\\updateeventrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|solutionrelative:ticketsbooking\\application\\dtos\\event\\updateeventrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|d:\\proj\\junior engineer task\\ticketsbooking\\ticketsbooking\\application\\interfaces\\ibookingrepositorie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|solutionrelative:ticketsbooking\\application\\interfaces\\ibookingrepositorie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|d:\\proj\\junior engineer task\\ticketsbooking\\ticketsbooking\\infrastructure\\repositories\\eventrepositorie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|solutionrelative:ticketsbooking\\infrastructure\\repositories\\eventrepositorie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|d:\\proj\\junior engineer task\\ticketsbooking\\ticketsbooking\\application\\dtos\\booking\\bookingseatavailability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|solutionrelative:ticketsbooking\\application\\dtos\\booking\\bookingseatavailability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|d:\\proj\\junior engineer task\\ticketsbooking\\ticketsbooking\\application\\interfaces\\ieventrepositorie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4709BD33-2A93-40A0-9EA9-13CDE1E53AA6}|TicketsBooking\\TicketsBooking.csproj|solutionrelative:ticketsbooking\\application\\interfaces\\ieventrepositorie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,175 +46,123 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IEventRepositorie.cs",
-              "DocumentMoniker": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\Interfaces\\IEventRepositorie.cs",
-              "RelativeDocumentMoniker": "TicketsBooking\\Application\\Interfaces\\IEventRepositorie.cs",
-              "ToolTip": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\Interfaces\\IEventRepositorie.cs",
-              "RelativeToolTip": "TicketsBooking\\Application\\Interfaces\\IEventRepositorie.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T09:58:55.872Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "EventExpirationService.cs",
-              "DocumentMoniker": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\BackgroundJobs\\EventExpirationService.cs",
-              "RelativeDocumentMoniker": "TicketsBooking\\Application\\BackgroundJobs\\EventExpirationService.cs",
-              "ToolTip": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\BackgroundJobs\\EventExpirationService.cs",
-              "RelativeToolTip": "TicketsBooking\\Application\\BackgroundJobs\\EventExpirationService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T09:45:05.185Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EventRepositorie.cs",
-              "DocumentMoniker": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Infrastructure\\Repositories\\EventRepositorie.cs",
-              "RelativeDocumentMoniker": "TicketsBooking\\Infrastructure\\Repositories\\EventRepositorie.cs",
-              "ToolTip": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Infrastructure\\Repositories\\EventRepositorie.cs",
-              "RelativeToolTip": "TicketsBooking\\Infrastructure\\Repositories\\EventRepositorie.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T09:04:14.477Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IBookingService.cs",
-              "DocumentMoniker": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\Interfaces\\IBookingService.cs",
-              "RelativeDocumentMoniker": "TicketsBooking\\Application\\Interfaces\\IBookingService.cs",
-              "ToolTip": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\Interfaces\\IBookingService.cs",
-              "RelativeToolTip": "TicketsBooking\\Application\\Interfaces\\IBookingService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T08:01:41.012Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "IBookingRepositorie.cs",
-              "DocumentMoniker": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\Interfaces\\IBookingRepositorie.cs",
-              "RelativeDocumentMoniker": "TicketsBooking\\Application\\Interfaces\\IBookingRepositorie.cs",
-              "ToolTip": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\Interfaces\\IBookingRepositorie.cs",
-              "RelativeToolTip": "TicketsBooking\\Application\\Interfaces\\IBookingRepositorie.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T07:56:05.528Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Domain\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "TicketsBooking\\Domain\\Entities\\User.cs",
-              "ToolTip": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Domain\\Entities\\User.cs",
-              "RelativeToolTip": "TicketsBooking\\Domain\\Entities\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T07:51:18.195Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "CreateBookingRequest.cs",
-              "DocumentMoniker": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\DTOs\\Booking\\CreateBookingRequest.cs",
-              "RelativeDocumentMoniker": "TicketsBooking\\Application\\DTOs\\Booking\\CreateBookingRequest.cs",
-              "ToolTip": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\DTOs\\Booking\\CreateBookingRequest.cs",
-              "RelativeToolTip": "TicketsBooking\\Application\\DTOs\\Booking\\CreateBookingRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T07:36:52.58Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Booking.cs",
-              "DocumentMoniker": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Domain\\Entities\\Booking.cs",
-              "RelativeDocumentMoniker": "TicketsBooking\\Domain\\Entities\\Booking.cs",
-              "ToolTip": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Domain\\Entities\\Booking.cs",
-              "RelativeToolTip": "TicketsBooking\\Domain\\Entities\\Booking.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "TicketsBooking\\Application\\Services\\UserService.cs",
+              "ToolTip": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\Services\\UserService.cs",
+              "RelativeToolTip": "TicketsBooking\\Application\\Services\\UserService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwCQAAABcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T07:33:22.713Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BookingRepositorie.cs",
-              "DocumentMoniker": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Infrastructure\\Repositories\\BookingRepositorie.cs",
-              "RelativeDocumentMoniker": "TicketsBooking\\Infrastructure\\Repositories\\BookingRepositorie.cs",
-              "ToolTip": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Infrastructure\\Repositories\\BookingRepositorie.cs",
-              "RelativeToolTip": "TicketsBooking\\Infrastructure\\Repositories\\BookingRepositorie.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T07:25:00.742Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BookingController.cs",
-              "DocumentMoniker": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Controllers\\BookingController.cs",
-              "RelativeDocumentMoniker": "TicketsBooking\\Controllers\\BookingController.cs",
-              "ToolTip": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Controllers\\BookingController.cs",
-              "RelativeToolTip": "TicketsBooking\\Controllers\\BookingController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T07:23:59.284Z",
+              "WhenOpened": "2025-09-22T13:23:28.246Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Program.cs",
-              "RelativeDocumentMoniker": "TicketsBooking\\Program.cs",
-              "ToolTip": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Program.cs",
-              "RelativeToolTip": "TicketsBooking\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAABIAAAAAAAAAA==",
+              "Title": "IBookingService.cs",
+              "DocumentMoniker": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\Interfaces\\IBookingService.cs",
+              "RelativeDocumentMoniker": "TicketsBooking\\Application\\Interfaces\\IBookingService.cs",
+              "ToolTip": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\Interfaces\\IBookingService.cs",
+              "RelativeToolTip": "TicketsBooking\\Application\\Interfaces\\IBookingService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T10:37:18.984Z",
+              "WhenOpened": "2025-09-22T13:19:22.703Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "BookingSeatAvailability.cs",
-              "DocumentMoniker": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\DTOs\\Booking\\BookingSeatAvailability.cs",
-              "RelativeDocumentMoniker": "TicketsBooking\\Application\\DTOs\\Booking\\BookingSeatAvailability.cs",
-              "ToolTip": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\DTOs\\Booking\\BookingSeatAvailability.cs",
-              "RelativeToolTip": "TicketsBooking\\Application\\DTOs\\Booking\\BookingSeatAvailability.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "CreateBookingRequest.cs",
+              "DocumentMoniker": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\DTOs\\Booking\\CreateBookingRequest.cs",
+              "RelativeDocumentMoniker": "TicketsBooking\\Application\\DTOs\\Booking\\CreateBookingRequest.cs",
+              "ToolTip": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\DTOs\\Booking\\CreateBookingRequest.cs",
+              "RelativeToolTip": "TicketsBooking\\Application\\DTOs\\Booking\\CreateBookingRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T07:23:54.106Z",
+              "WhenOpened": "2025-09-22T13:18:07.221Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
+              "Title": "UpdateEventRequest.cs",
+              "DocumentMoniker": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\DTOs\\Event\\UpdateEventRequest.cs",
+              "RelativeDocumentMoniker": "TicketsBooking\\Application\\DTOs\\Event\\UpdateEventRequest.cs",
+              "ToolTip": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\DTOs\\Event\\UpdateEventRequest.cs",
+              "RelativeToolTip": "TicketsBooking\\Application\\DTOs\\Event\\UpdateEventRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T13:16:57.255Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "BookingService.cs",
               "DocumentMoniker": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\Services\\BookingService.cs",
               "RelativeDocumentMoniker": "TicketsBooking\\Application\\Services\\BookingService.cs",
               "ToolTip": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\Services\\BookingService.cs",
               "RelativeToolTip": "TicketsBooking\\Application\\Services\\BookingService.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwGoAAABLAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAiwE4AAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T07:23:42.66Z",
+              "WhenOpened": "2025-09-22T13:11:41.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IEventRepositorie.cs",
+              "DocumentMoniker": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\Interfaces\\IEventRepositorie.cs",
+              "RelativeDocumentMoniker": "TicketsBooking\\Application\\Interfaces\\IEventRepositorie.cs",
+              "ToolTip": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\Interfaces\\IEventRepositorie.cs",
+              "RelativeToolTip": "TicketsBooking\\Application\\Interfaces\\IEventRepositorie.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T12:40:10.277Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EventService.cs",
+              "DocumentMoniker": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\Services\\EventService.cs",
+              "RelativeDocumentMoniker": "TicketsBooking\\Application\\Services\\EventService.cs",
+              "ToolTip": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Application\\Services\\EventService.cs",
+              "RelativeToolTip": "TicketsBooking\\Application\\Services\\EventService.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAIwDUAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T12:29:12.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EventRepositorie.cs",
+              "DocumentMoniker": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Infrastructure\\Repositories\\EventRepositorie.cs",
+              "RelativeDocumentMoniker": "TicketsBooking\\Infrastructure\\Repositories\\EventRepositorie.cs",
+              "ToolTip": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Infrastructure\\Repositories\\EventRepositorie.cs",
+              "RelativeToolTip": "TicketsBooking\\Infrastructure\\Repositories\\EventRepositorie.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T12:28:48.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EventController.cs",
+              "DocumentMoniker": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Controllers\\EventController.cs",
+              "RelativeDocumentMoniker": "TicketsBooking\\Controllers\\EventController.cs",
+              "ToolTip": "D:\\proj\\Junior Engineer Task\\TicketsBooking\\TicketsBooking\\Controllers\\EventController.cs",
+              "RelativeToolTip": "TicketsBooking\\Controllers\\EventController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T12:28:57.501Z",
               "EditorCaption": ""
             }
           ]

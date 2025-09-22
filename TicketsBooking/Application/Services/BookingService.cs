@@ -51,7 +51,7 @@ namespace TicketsBooking.Application.Services
             return result;
         }
 
-        public async Task<CreateBookingRequest> AddBookingAsync(CreateBookingRequest dto)
+        public async Task<BookingResponse> AddBookingAsync(CreateBookingRequest dto)
         {
             var CheckEventId = await _eventRepositorie.GetByIdAsync(dto.EventId);
             if (CheckEventId == null)
@@ -76,7 +76,7 @@ namespace TicketsBooking.Application.Services
             entity.CreatedAt = DateTime.UtcNow;
             await _bookingRepositorie.AddAsync(entity);
             await _bookingRepositorie.SaveChangesAsync();
-            var response = entity.Adapt<CreateBookingRequest>();
+            var response = entity.Adapt<BookingResponse>();
             return response;
         }
 
@@ -107,6 +107,7 @@ namespace TicketsBooking.Application.Services
                 throw new ValidationException("Booking is already Cancelle.");
             entity.CancelledAt = DateTime.UtcNow;
             entity.IsCancelled = true;
+            entity.SeatBooked = 0;
             await _bookingRepositorie.SaveChangesAsync();
         }
     }

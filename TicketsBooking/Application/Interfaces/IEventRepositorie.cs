@@ -10,6 +10,7 @@ namespace TicketsBooking.Application.Interfaces
         public Task AddAsync(Event CreateEventRequest);
         public Task DeleteAsync(Event entity);
         public Task<List<Event>> CancelAsync();
+        public Task<bool> GetDuplicateDataAsync(string name);
         public Task SaveChangesAsync();
     }
 }

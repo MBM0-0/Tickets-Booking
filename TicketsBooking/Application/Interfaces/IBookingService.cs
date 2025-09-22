@@ -7,7 +7,7 @@ namespace TicketsBooking.Application.Interfaces
         public Task<List<BookingResponse>> GetAllBookingAsync();
         public Task<BookingResponse> GetBookingByIdAsync(int id);
         public Task<BookingSeatAvailability> GetSeatAvailabilityAsync(int id);
-        public Task<CreateBookingRequest> AddBookingAsync(CreateBookingRequest dto);
+        public Task<BookingResponse> AddBookingAsync(CreateBookingRequest dto);
         public Task<UpdateBookingRequest> UpdateBookingAsync(UpdateBookingRequest dto);
         public Task CancelBookingAsync(int id);
     }
