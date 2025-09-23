@@ -454,9 +454,6 @@
           "seatBooked": {
             "type": "integer",
             "format": "int32"
-          },
-          "isCancelled": {
-            "type": "boolean"
           }
         },
         "additionalProperties": false

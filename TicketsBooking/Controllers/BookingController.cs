@@ -40,7 +40,7 @@ namespace TicketsBooking.Controllers
         public async Task<IActionResult> CreateBooking(CreateBookingRequest dto)
         {
             var result = await _bookingService.AddBookingAsync(dto);
-            return Created("",result);
+            return Created(result.Id.ToString(),result);
         }
 
         [HttpPut]

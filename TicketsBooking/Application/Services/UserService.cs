@@ -1,4 +1,5 @@
 ﻿using Mapster;
+using System;
 using TicketsBooking.Application.DTOs.User;
 using TicketsBooking.Application.Exceptions;
 using TicketsBooking.Application.Interfaces;
@@ -33,11 +34,12 @@ namespace TicketsBooking.Application.Services
     public async Task<UserResponse> AddUserAsync(CreateUserRequest dto)
         {
             var entity = dto.Adapt<User>();
-            if (entity.Username.Length < 5)
-                throw new ValidationException("Username Shoud Be at Lese 5 Charcters long");
+            string Username = entity.Username;
+            if (Username.Length < 5 || Username.Length > 16 || !char.IsLetter(Username[0] ) || !Username.All(c => char.IsLetterOrDigit(c) || c == '_') || Username.Contains(' '))
+                throw new ValidationException("Username Shoud Be betwen 4 to 17 later begans with a letter exaptonly _ from charcters cant have white space.");
             if ( entity.Password.Length is < 8 || !(entity.Password.Any(char.IsDigit)) || !(entity.Password.Any(char.IsUpper)) || !(entity.Password.Any(char.IsLower)))
             throw new ValidationException("Password must be more than 8 characters and contain a number, uppercase and lowercase letters.");
-            if (!entity.Email.Contains('@') || !(entity.Email.EndsWith(".com")))
+            if (!entity.Email.Contains('@') || !(entity.Email.ToLower().EndsWith(".com") || !char.IsLetter(entity.Email[0])))
                 throw new ValidationException("Email Not Valid.");
             var emailexisit = await _userRepositorie.GetByEmailAsync(entity.Email);
             if (emailexisit != null)
@@ -57,10 +59,10 @@ namespace TicketsBooking.Application.Services
                 throw new NotFoundException("There is No User Found With This Id.");
             if (dto.Password.Length is < 8 || !(dto.Password.Any(char.IsDigit)) || !(dto.Password.Any(char.IsUpper)) || !(dto.Password.Any(char.IsLower)))
                 throw new ValidationException("Password must be more than 8 characters and contain a number, uppercase and lowercase letters.");
-            if (!dto.Email.Contains('@') || !(dto.Email.EndsWith(".com")))
+            if (!dto.Email.Contains('@') || !(dto.Email.ToLower().EndsWith(".com") || !char.IsLetter(dto.Email[0])))
                 throw new ValidationException("Email Not Valid.");
             var emailexisit = await _userRepositorie.GetByEmailAsync(dto.Email);
-            if (emailexisit != null)
+            if ( emailexisit != null && entity.Email == dto.Email)
                 throw new ValidationException("The Email You Entered is Used Try Another One.");
 
             dto.Adapt(entity);

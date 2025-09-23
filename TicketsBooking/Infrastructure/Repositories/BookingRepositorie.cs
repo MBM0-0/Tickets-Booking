@@ -21,9 +21,9 @@ namespace TicketsBooking.Infrastructure.Repositories
         {
             return await _dbcontext.Bookings.Include(b => b.User).Include(b => b.Event).FirstOrDefaultAsync(b => b.Id == id);
         }
-        public async Task<bool> BookingExistsAsync(int eventId, int userId)
+        public async Task<bool> GetDuplicateDataAsync(int userId, int eventId)
         {
-            return await _dbcontext.Bookings.AnyAsync(b => b.EventId == eventId && b.UserId == userId);
+            return await _dbcontext.Bookings.AnyAsync(b => b.UserId == userId && b.EventId == eventId && b.IsCancelled == false);
         }
         public async Task AddAsync(Booking entity)
         {
@@ -35,6 +35,7 @@ namespace TicketsBooking.Infrastructure.Repositories
 
             return count;
         }
+
         public async Task SaveChangesAsync()
         {
             await _dbcontext.SaveChangesAsync();

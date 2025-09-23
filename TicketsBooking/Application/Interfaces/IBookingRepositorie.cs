@@ -7,7 +7,7 @@ namespace TicketsBooking.Application.Interfaces
     {
         public Task<List<Booking>> GetAllAsync();
         public Task<Booking> GetByIdAsync(int id);
-        public Task<bool> BookingExistsAsync(int eventId, int userId);
+        public Task<bool> GetDuplicateDataAsync(int userId, int eventId);
         public Task AddAsync(Booking entity);
         public Task<int> GetBookedSeatsAsync(int id);
         public Task SaveChangesAsync();

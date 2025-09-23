@@ -59,7 +59,8 @@ namespace TicketsBooking.Application.Services
             var CheckUserId = await _userRepositorie.GetByIdAsync(dto.UserId);
             if (CheckUserId == null)
                 throw new NotFoundException("There is No User Found Whith This Id.");
-            var exists = await _bookingRepositorie.BookingExistsAsync(dto.EventId, dto.UserId);
+
+            var exists = await _bookingRepositorie.GetDuplicateDataAsync(dto.UserId, dto.EventId);
             if (exists)
                 throw new ValidationException("The User Already Has a Booking for this Event.");
 
@@ -80,14 +81,15 @@ namespace TicketsBooking.Application.Services
             return response;
         }
 
-        public async Task<UpdateBookingRequest> UpdateBookingAsync(UpdateBookingRequest dto)
+        public async Task<UpdateBookingRequest> UpdateBookingAsync(UpdateBookingRequest dto) // need to simplify at the End
         {
             var entity = await _bookingRepositorie.GetByIdAsync(dto.Id);
-            if (entity == null)
-                throw new NotFoundException("There is No Booking Found Whith This Id.");
+            var exists = await _bookingRepositorie.GetDuplicateDataAsync(entity.UserId , entity.EventId);
+            if (!exists)
+                throw new NotFoundException("There is No Active Booking Found Whith This Id.");
+
             if (dto.SeatBooked <= 0 || dto.SeatBooked > 4)
                 throw new ValidationException("You Have To Book Seats and it Can't Be More Than 4.");
-            // if event is done or started you cant update it
             var bookedSeats = await GetSeatAvailabilityAsync(entity.EventId);
             if ((bookedSeats.SeatsAvailable + entity.SeatBooked) < dto.SeatBooked)
                 throw new ValidationException($"Event Have {bookedSeats.SeatsAvailable} Seats Availabil.");

@@ -23,23 +23,23 @@ namespace TicketsBooking.Infrastructure.Repositories
         {
             return await _context.Events.FindAsync(id);
         }
+
         public async Task AddAsync(Event entity)
         {
             await _context.Events.AddAsync(entity);
         }
+
         public async Task DeleteAsync (Event entity)
     {
             _context.Events.Remove(entity);
 
     }
-        public async Task<List<Event>> CancelAsync()
-        {
-          return await _context.Events.Where(x => !x.IsEnded && x.StartsAt < DateTime.UtcNow).ToListAsync();
-        }
+
         public async Task<bool> GetDuplicateDataAsync(string name)
         {
            return await _context.Events.Where(x => !x.IsEnded).AnyAsync(x => x.Name == name);
         }
+
         public async Task SaveChangesAsync()
         {
             await _context.SaveChangesAsync();

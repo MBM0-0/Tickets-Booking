@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using TicketsBooking.Application.Interfaces;
 using TicketsBooking.Infrastructure.Repositories;
 
@@ -16,16 +17,29 @@ namespace TicketsBooking.Application.BackgroundJobs
             while (!cancellationToken.IsCancellationRequested)
             {
                 using var scope = _serviceProvider.CreateScope();
-                var eventrange = scope.ServiceProvider.GetRequiredService<IEventRepositorie>();
-                var expiredevents = await eventrange.CancelAsync();
+                var dbcontext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+                var now = DateTime.UtcNow;
 
-                foreach (var expire in expiredevents)
-                { expire.IsEnded = true; }
+                var expiredEvents = await dbcontext.Events.Where(e => e.StartsAt < now && e.IsEnded == false).ToListAsync(cancellationToken);
 
-                await eventrange.SaveChangesAsync();
+                if (expiredEvents.Any())
+                {
+                    foreach (var ev in expiredEvents)
+                    {
+                        ev.IsEnded = true;
+
+                        var bookings = await dbcontext.Bookings.Where(b => b.EventId == ev.Id && b.IsCancelled == false).ToListAsync(cancellationToken);
+
+                        foreach (var booking in bookings)
+                        {
+                            booking.IsCancelled = true;
+                        }
+                    }
+
+                    await dbcontext.SaveChangesAsync(cancellationToken);
+                }
 
                 await Task.Delay(TimeSpan.FromMinutes(1), cancellationToken);
-
             }
         }
     }

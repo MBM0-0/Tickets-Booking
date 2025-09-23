@@ -39,11 +39,11 @@ namespace TicketsBooking.Application.Services
             if (checkduplicate)
                 throw new ValidationException("There Is Alrady an active event with this name");
 
-            if (entity.Capacity <= 5)
+            if (entity.Capacity < 5)
                 throw new ValidationException("You Can't Have an Event With Seat Capacity Less Than 5.");
             if (entity.StartsAt <= DateTime.UtcNow)
                 throw new ValidationException("You Can't Create Events in the Past.");
-            if ((entity.EndsAt - entity.StartsAt).TotalHours < 1)
+            if ((entity.EndsAt - entity.StartsAt).TotalHours <= 1)
                 throw new ValidationException("You Can't Have Event That is Less than one Houre");
 
             await _eventRepositorie.AddAsync(entity);
@@ -54,18 +54,16 @@ namespace TicketsBooking.Application.Services
         public async Task<UpdateEventRequest> UpdateEventAsync(UpdateEventRequest dto)
         {
             var entity = await _eventRepositorie.GetByIdAsync(dto.Id);
-            if (entity == null)
-                throw new NotFoundException("There is No Event Found With This Id.");
+            if (entity == null || entity.IsEnded == true)
+                throw new NotFoundException("event is Not Found or Has Ended");
             var checkduplicate = await _eventRepositorie.GetDuplicateDataAsync(dto.Name);
             if (checkduplicate)
                 throw new ValidationException("There Is Alrady an active event with this name");
 
-            if (dto.Capacity <= 0)
-                throw new ValidationException("You Can't Have an Event With No Seat Capacity.");
-            if (dto.StartsAt <= DateTime.UtcNow)
-                throw new ValidationException("You Can't Create Events in the Past.");
             if (entity.Capacity > dto.Capacity)
                 throw new ValidationException("You can't decrease the number of seats in your event.");
+            if (dto.StartsAt <= DateTime.UtcNow)
+                throw new ValidationException("You Can't Create Events in the Past.");
             if ((dto.EndsAt - dto.StartsAt).TotalHours < 1)
                 throw new ValidationException("You Can't Have Event That is Less than one Houre");
 
