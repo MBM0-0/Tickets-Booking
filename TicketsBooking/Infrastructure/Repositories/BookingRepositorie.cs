@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TicketsBooking.Application.DTOs.Booking;
 using TicketsBooking.Application.Interfaces;
 using TicketsBooking.Domain.Entities;
 
