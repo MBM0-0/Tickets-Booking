@@ -108,9 +108,9 @@ namespace TicketsBooking
                 app.UseSwaggerUI();
             }
 
-
             app.UseHttpsRedirection();
-            app.UseMiddleware<ExceptionMiddleware>();
+
+            app.UseMiddleware<TicketsBooking.Middlewares.ExceptionMiddleware>();
             app.UseAuthentication();
             app.UseAuthorization();
 

@@ -1,12 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TicketsBooking.Application.DTOs.User;
+using TicketsBooking.Application.Exceptions;
 using TicketsBooking.Application.Interfaces;
 using TicketsBooking.Application.Services;
 
 namespace TicketsBooking.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[Controller]")]
     [ApiController]
     public class UserController : ControllerBase
@@ -21,37 +22,85 @@ namespace TicketsBooking.Controllers
         [HttpGet]
      public async Task<IActionResult> GetAllUsers()
         {
-            var Users = await _userService.GetAllUserAsync();
-            return Ok(Users);
+            try
+            {
+                var users = await _userService.GetAllUserAsync();
+                return Ok(users);
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
         }
 
         [HttpGet]
         [Route("{id}")]
         public async Task<IActionResult> GetUserByIdUser(int id)
         {
-            var user = await _userService.GetByUserIdAsync(id);
-            return Ok(user);
+            try
+            {
+                var user = await _userService.GetByUserIdAsync(id);
+                return Ok(user);
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, new { Message = "Internal Server Error" });
+            }
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateUser (CreateUserRequest dto)
         {
-            var entity = await _userService.AddUserAsync(dto);
-            return Created("",entity);
+            try
+            {
+                var user = await _userService.AddUserAsync(dto);
+                return Created("", user);
+            }
+            catch (ValidationException ex)
+            {
+                return BadRequest(new { Message = ex.Message });
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, new { Message = "Internal Server Error" });
+            }
         }
 
         [HttpPut]
         public async Task<IActionResult> UpdateUser (UpdateUserRequest dto)
         {
-            var entity = await _userService.UpdateUserAsync(dto);
-            return Ok(entity);
+            try
+            {
+                var user = await _userService.UpdateUserAsync(dto);
+                return Ok(user);
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
+            catch (ValidationException ex)
+            {
+                return BadRequest(new { Message = ex.Message });
+            }
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {
-            await _userService.DeleteUserAsync(id);
-            return NoContent();
+            try
+            {
+                await _userService.DeleteUserAsync(id);
+                return NoContent();
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
+
         }
 
     }

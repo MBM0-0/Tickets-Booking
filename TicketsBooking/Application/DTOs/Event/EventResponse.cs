@@ -10,5 +10,8 @@
         public DateTime StartsAt { get; set; }
         public DateTime EndsAt { get; set; }
         public bool IsEnded { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime? UpdatedAt { get; set; }
+        public DateTime? EndedAt { get; set; }
     }
 }

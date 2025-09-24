@@ -40,12 +40,13 @@ namespace TicketsBooking.Application.Services
                 throw new ValidationException("There Is Alrady an active event with this name");
 
             if (entity.Capacity < 5)
-                throw new ValidationException("You Can't Have an Event With Seat Capacity Less Than 5.");
+                throw new ValidationException("Seat Capacity Can't be Less Than 5.");
             if (entity.StartsAt <= DateTime.UtcNow)
-                throw new ValidationException("You Can't Start Events in the Past.");
+                throw new ValidationException("events can't be created in the past.");
             if ((entity.EndsAt - entity.StartsAt).TotalHours <= 1)
-                throw new ValidationException("You Can't Have Event That is Less than one Houre");
+                throw new ValidationException("Event duration must be at least one hour.");
 
+            entity.CreatedAt = DateTime.UtcNow;
             await _eventRepositorie.AddAsync(entity);
             await _eventRepositorie.SaveChangesAsync();
             return entity.Adapt<EventResponse>();
@@ -54,22 +55,56 @@ namespace TicketsBooking.Application.Services
         public async Task<UpdateEventRequest> UpdateEventAsync(UpdateEventRequest dto)
         {
             var entity = await _eventRepositorie.GetByIdAsync(dto.Id);
-            if (entity == null || entity.IsEnded == true)
-                throw new NotFoundException("event is Not Found or Has Ended");
-            var checkduplicate = await _eventRepositorie.GetDuplicateDataAsync(dto.Name);
-            if (checkduplicate)
-                throw new ValidationException("There Is Alrady an active event with this name");
+            if (entity == null || entity.IsEnded)
+                throw new NotFoundException("Event not found or has already ended.");
 
-            if (entity.Capacity > dto.Capacity)
-                throw new ValidationException("You can't decrease the number of seats in your event.");
-            if (dto.StartsAt <= DateTime.UtcNow)
-                throw new ValidationException("You Can't Create Events in the Past.");
-            if ((dto.EndsAt - dto.StartsAt).TotalHours < 1)
-                throw new ValidationException("You Can't Have Event That is Less than one Houre");
+            if (!string.IsNullOrWhiteSpace(dto.Name) && dto.Name != entity.Name)
+            {
+                var checkDuplicate = await _eventRepositorie.GetDuplicateDataAsync(dto.Name);
+                if (checkDuplicate)
+                    throw new ValidationException("There is already an active event with this name.");
+                entity.Name = dto.Name;
+            }
 
-            dto.Adapt(entity);
+            if (!string.IsNullOrWhiteSpace(dto.Description))
+                entity.Description = dto.Description;
+
+            if (!string.IsNullOrWhiteSpace(dto.Location))
+                entity.Location = dto.Location;
+
+            if (dto.Capacity > 0)
+            {
+                if (dto.Capacity < entity.Capacity)
+                    throw new ValidationException("The number of seats cannot be decreased from the original capacity.");
+                entity.Capacity = dto.Capacity;
+            }
+
+            if (dto.StartsAt != default(DateTime))
+            {
+                if (dto.StartsAt <= DateTime.UtcNow)
+                    throw new ValidationException("events can't be created in the past.");
+                entity.StartsAt = dto.StartsAt;
+            }
+
+            if (dto.EndsAt != default(DateTime))
+            {
+                if ((dto.EndsAt - (dto.StartsAt != default(DateTime) ? dto.StartsAt : entity.StartsAt)).TotalHours < 1)
+                    throw new ValidationException("Event duration must be at least one hour.");
+                entity.EndsAt = dto.EndsAt;
+            }
+            entity.UpdatedAt = DateTime.UtcNow;
+            var result = new UpdateEventRequest
+            {
+                Id = entity.Id,
+                Name = entity.Name,
+                Description = entity.Description,
+                Location = entity.Location,
+                Capacity = entity.Capacity,
+                StartsAt = entity.StartsAt,
+                EndsAt = entity.EndsAt
+            };
             await _eventRepositorie.SaveChangesAsync();
-            return dto;
+            return result;
         }
 
         public async Task DeleteEventAsync(int id)

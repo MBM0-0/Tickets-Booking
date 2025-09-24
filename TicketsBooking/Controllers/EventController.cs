@@ -1,12 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TicketsBooking.Application.DTOs.Event;
+using TicketsBooking.Application.Exceptions;
 using TicketsBooking.Application.Interfaces;
 using TicketsBooking.Application.Services;
 
 namespace TicketsBooking.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[Controller]")]
     [ApiController]
     public class EventController : ControllerBase
@@ -20,37 +21,75 @@ namespace TicketsBooking.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllEvents()
         {
-            var events = await _eventService.GetAllEventsAsync();
-            return Ok(events);
+            try
+            {
+                var events = await _eventService.GetAllEventsAsync();
+                return Ok(events);
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetEventById(int id)
         {
-            var events = await _eventService.GetEventByIdAsync(id);
-            return Ok(events);
-
+            try
+            {
+                var ev = await _eventService.GetEventByIdAsync(id);
+                return Ok(ev);
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateEvent(CreateEventRequest dto)
         {
-            var events = await _eventService.CreateEventAsync(dto);
-            return Created("", events);
+            try
+            {
+                var ev = await _eventService.CreateEventAsync(dto);
+                return Created("", ev);
+            }
+            catch (ValidationException ex)
+            {
+                return BadRequest(new { Message = ex.Message });
+            }
         }
 
         [HttpPut]
         public async Task<IActionResult> UpdateEvent(UpdateEventRequest dto)
         {
-            var events = await _eventService.UpdateEventAsync(dto);
-            return Ok(events);
+            try
+            {
+                var ev = await _eventService.UpdateEventAsync(dto);
+                return Ok(ev);
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
+            catch (ValidationException ex)
+            {
+                return BadRequest(new { Message = ex.Message });
+            }
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEvent(int id)
         {
-            await _eventService.DeleteEventAsync(id);
-            return NoContent();
+            try
+            {
+                await _eventService.DeleteEventAsync(id);
+                return NoContent();
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
         }
     }
 }

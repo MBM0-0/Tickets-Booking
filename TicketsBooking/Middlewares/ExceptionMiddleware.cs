@@ -1,4 +1,6 @@
-﻿using TicketsBooking.Application.Exceptions;
+﻿using System.Net;
+using System.Text.Json;
+using TicketsBooking.Application.Exceptions;
 
 namespace TicketsBooking.Middlewares
 {
@@ -11,37 +13,47 @@ namespace TicketsBooking.Middlewares
             _next = next;
         }
 
-        public async Task InvokeAsync(HttpContext httpContext)
+        public async Task InvokeAsync(HttpContext context)
         {
             try
             {
-                await _next(httpContext);
+                await _next(context);
             }
             catch (Exception ex)
             {
-                await HandleExceptionAsync(httpContext, ex);
+                await HandleExceptionAsync(context, ex);
             }
         }
 
         private static Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
-            int statusCode = exception switch
-            {
-                NotFoundException => StatusCodes.Status404NotFound,
-                ValidationException => StatusCodes.Status400BadRequest,
-                ForbiddenException => StatusCodes.Status403Forbidden,
-                _ => StatusCodes.Status500InternalServerError
-            };
+            HttpStatusCode status;
+            string message = exception.Message;
 
-            var result = System.Text.Json.JsonSerializer.Serialize(new
+            switch (exception)
             {
-                error = exception.Message,
-                statusCode
-            });
+                case NotFoundException:
+                    status = HttpStatusCode.NotFound;
+                    break;
+                case ValidationException:
+                    status = HttpStatusCode.BadRequest;
+                    break;
+                case UnauthorizedException:
+                    status = HttpStatusCode.Unauthorized;
+                    break;
+                default:
+                    status = HttpStatusCode.InternalServerError;
+                    message = "Internal Server Error"; // do not expose internal details
+                    break;
+            }
+
+            var response = new { StatusCode = (int)status, Message = message };
+            var payload = JsonSerializer.Serialize(response);
 
             context.Response.ContentType = "application/json";
-            context.Response.StatusCode = statusCode;
-            return context.Response.WriteAsync(result);
+            context.Response.StatusCode = (int)status;
+
+            return context.Response.WriteAsync(payload);
         }
     }
 }
