@@ -1,10 +1,12 @@
 ﻿using Mapster;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TicketsBooking.Application.DTOs.Booking;
 using TicketsBooking.Application.Interfaces;
 
 namespace TicketsBooking.Controllers
 {
+    //[Authorize]
     [Route("api/[Controller]")]
     [ApiController]
     public class BookingController : ControllerBase
@@ -14,7 +16,6 @@ namespace TicketsBooking.Controllers
         {
             _bookingService = bookingService;
         }
-
         [HttpGet]
         public async Task<IActionResult> GetAllBookings()
         {

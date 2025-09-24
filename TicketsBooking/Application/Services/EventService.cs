@@ -42,7 +42,7 @@ namespace TicketsBooking.Application.Services
             if (entity.Capacity < 5)
                 throw new ValidationException("You Can't Have an Event With Seat Capacity Less Than 5.");
             if (entity.StartsAt <= DateTime.UtcNow)
-                throw new ValidationException("You Can't Create Events in the Past.");
+                throw new ValidationException("You Can't Start Events in the Past.");
             if ((entity.EndsAt - entity.StartsAt).TotalHours <= 1)
                 throw new ValidationException("You Can't Have Event That is Less than one Houre");
 

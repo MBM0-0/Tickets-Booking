@@ -236,5 +236,21 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TicketsBooking.Controllers.AuthUsersController",
+    "Method": "login",
+    "RelativePath": "AuthUsers/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "TicketsBooking.Application.DTOs.Auth.AuthenticationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

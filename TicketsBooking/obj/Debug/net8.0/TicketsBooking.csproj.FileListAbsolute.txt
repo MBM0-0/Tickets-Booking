@@ -138,3 +138,11 @@ D:\proj\Junior Engineer Task\TicketsBooking\TicketsBooking\obj\Debug\net8.0\Tick
 D:\proj\Junior Engineer Task\TicketsBooking\TicketsBooking\obj\Debug\net8.0\ref\TicketsBooking.dll
 D:\proj\Junior Engineer Task\TicketsBooking\TicketsBooking\bin\Debug\net8.0\Mapster.dll
 D:\proj\Junior Engineer Task\TicketsBooking\TicketsBooking\bin\Debug\net8.0\Mapster.Core.dll
+D:\proj\Junior Engineer Task\TicketsBooking\TicketsBooking\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\proj\Junior Engineer Task\TicketsBooking\TicketsBooking\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\proj\Junior Engineer Task\TicketsBooking\TicketsBooking\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\proj\Junior Engineer Task\TicketsBooking\TicketsBooking\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\proj\Junior Engineer Task\TicketsBooking\TicketsBooking\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\proj\Junior Engineer Task\TicketsBooking\TicketsBooking\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\proj\Junior Engineer Task\TicketsBooking\TicketsBooking\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\proj\Junior Engineer Task\TicketsBooking\TicketsBooking\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
