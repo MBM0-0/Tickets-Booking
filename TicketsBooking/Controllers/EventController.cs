@@ -3,11 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using TicketsBooking.Application.DTOs.Event;
 using TicketsBooking.Application.Exceptions;
 using TicketsBooking.Application.Interfaces;
-using TicketsBooking.Application.Services;
 
 namespace TicketsBooking.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/[Controller]")]
     [ApiController]
     public class EventController : ControllerBase

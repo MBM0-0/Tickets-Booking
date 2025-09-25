@@ -140,6 +140,8 @@ Missing Feachers   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 8. Exception handling middleware is broken
 9. Passwords are not encrypted
 10. Program.cs Need a Cleanup
+11. Make All DateTimes Work In IRaqi Time Zone +3
+12. If the Event Ends Booking Seats Will Not Be Reset 
 
 ----------------------------------------------------------------(Unit Test)-------------------------------------------------------------------------
 it tests 5 services in dirnt pathes

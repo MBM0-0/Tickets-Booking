@@ -1,7 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Diagnostics.CodeAnalysis;
-using System.Security.Cryptography.X509Certificates;
-using TicketsBooking.Application.DTOs;
 using TicketsBooking.Application.Interfaces;
 using TicketsBooking.Domain.Entities;
 
