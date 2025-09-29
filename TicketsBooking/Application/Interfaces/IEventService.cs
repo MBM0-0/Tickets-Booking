@@ -1,5 +1,4 @@
 ﻿using TicketsBooking.Application.DTOs.Event;
-using TicketsBooking.Infrastructure.Repositories;
 
 namespace TicketsBooking.Application.Interfaces
 {

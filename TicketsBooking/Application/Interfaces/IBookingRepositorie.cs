@@ -1,5 +1,4 @@
-﻿using TicketsBooking.Application.DTOs.Booking;
-using TicketsBooking.Domain.Entities;
+﻿using TicketsBooking.Domain.Entities;
 
 namespace TicketsBooking.Application.Interfaces
 {

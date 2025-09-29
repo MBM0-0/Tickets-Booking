@@ -1,5 +1,4 @@
-﻿
-using Mapster;
+﻿using Mapster;
 using TicketsBooking.Application.DTOs.Event;
 using TicketsBooking.Application.Exceptions;
 using TicketsBooking.Application.Interfaces;

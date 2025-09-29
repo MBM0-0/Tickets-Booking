@@ -1,13 +1,10 @@
-﻿using System;
-using System.Threading.Tasks;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Moq;
 using TicketsBooking.Application.DTOs.User;
 using TicketsBooking.Application.Exceptions;
 using TicketsBooking.Application.Interfaces;
 using TicketsBooking.Application.Services;
 using TicketsBooking.Domain.Entities;
-using Xunit;
 
 namespace TicketBooking.Tests.Services.Test
 {
