@@ -1,0 +1,14 @@
+# Build artifacts
+bin/
+obj/
+out/
+dist/
+
+# User-specific files
+.vs/
+*.user
+*.suo
+
+# OS files
+.DS_Store
+Thumbs.db
