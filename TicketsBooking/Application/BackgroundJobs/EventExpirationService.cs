@@ -1,5 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using TicketsBooking.Application.Interfaces;
 using TicketsBooking.Infrastructure;
+using TicketsBooking.Infrastructure.Repositories;
 
 namespace TicketsBooking.Application.BackgroundJobs
 {

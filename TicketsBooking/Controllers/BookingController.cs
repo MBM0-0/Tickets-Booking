@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Mapster;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TicketsBooking.Application.DTOs.Booking;
 using TicketsBooking.Application.Exceptions;
@@ -6,7 +7,7 @@ using TicketsBooking.Application.Interfaces;
 
 namespace TicketsBooking.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[Controller]")]
     [ApiController]
     public class BookingController : ControllerBase

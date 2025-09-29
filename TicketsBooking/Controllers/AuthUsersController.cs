@@ -15,7 +15,7 @@ namespace TicketsBooking.Controllers
             _authService = authService;
         }
 
-        [HttpPost("Login")]
+        [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] AuthenticationRequest request)
         {
             var result = await _authService.LoginAsync(request);

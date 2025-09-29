@@ -43,7 +43,7 @@ namespace TicketsBooking.Middlewares
                     break;
                 default:
                     status = HttpStatusCode.InternalServerError;
-                    message = "Internal Server Error";
+                    message = "Internal Server Error"; // do not expose internal details
                     break;
             }
 

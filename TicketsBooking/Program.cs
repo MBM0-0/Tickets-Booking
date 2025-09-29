@@ -1,15 +1,23 @@
 ﻿
+using Mapster;
+using MapsterMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.IdentityModel.Tokens.Experimental;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using TicketsBooking.Application;
 using TicketsBooking.Application.BackgroundJobs;
 using TicketsBooking.Application.DTOs.Auth;
 using TicketsBooking.Application.Interfaces;
 using TicketsBooking.Application.Services;
+using TicketsBooking.Domain.Entities;
 using TicketsBooking.Infrastructure;
 using TicketsBooking.Infrastructure.Repositories;
+using TicketsBooking.Middlewares;
 namespace TicketsBooking
 {
     public class Program

@@ -2,7 +2,7 @@
   {
     "ContainingType": "TicketsBooking.Controllers.AuthController",
     "Method": "Login",
-    "RelativePath": "api/Auth/Login",
+    "RelativePath": "api/Auth/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
